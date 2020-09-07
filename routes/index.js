@@ -20,6 +20,7 @@ router.get('/students', async (request, response) => {
    }
 });
 
+
 router.get('/students/:studentId', async function (request, response) {
     try {
         let dbRow = await db.getStudentById(request.params.studentId);
