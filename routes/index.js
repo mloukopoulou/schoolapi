@@ -13,7 +13,7 @@ router.get('/students', async (request, response) => {
        let dbRows = await db.getAllStudents();
        await response.json(dbRows);
    } catch (e) {
-       console.error(e)
+       console.error(e);
        await response.status(500).json({
            error: e
        });
@@ -22,13 +22,13 @@ router.get('/students', async (request, response) => {
 
 router.get('/students/:studentId', async function (request, response) {
     try {
-        let dbRow = await db.getStudentById(request.params.studentId)
+        let dbRow = await db.getStudentById(request.params.studentId);
         if(!dbRow) {
             await response.json({msg:'dddΔεν υπάρχει μαθητής με κωδικό ' + request.params.studentId});
         }
         await response.json(dbRow);
     } catch (e) {
-        console.error(e)
+        console.error(e);
         await response.status(500).json({
             error: e
         });
@@ -37,11 +37,11 @@ router.get('/students/:studentId', async function (request, response) {
 
 router.delete('/students/:studentId', async function (request, response) {
     try {
-        let dbRowId = await db.deleteStudent(request.params.studentId)
-        console.log('id ' + dbRowId)
+        let dbRowId = await db.deleteStudent(request.params.studentId);
+        console.log('id ' + dbRowId);
         await response.json(dbRowId);
     } catch (e) {
-        console.error(e)
+        console.error(e);
         await response.status(500).json({
             error: e
         });
