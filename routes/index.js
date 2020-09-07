@@ -24,7 +24,7 @@ router.get('/students/:studentId', async function (request, response) {
     try {
         let dbRow = await db.getStudentById(request.params.studentId);
         if(!dbRow) {
-            await response.json({msg:'dddΔεν υπάρχει μαθητής με κωδικό ' + request.params.studentId});
+            await response.json({msg:'Δεν υπάρχει μαθητής με κωδικό ' + request.params.studentId});
         }
         await response.json(dbRow);
     } catch (e) {
