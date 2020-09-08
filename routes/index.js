@@ -8,6 +8,7 @@ router.get('/', async function (request, response) {
     await response.json({msg: 'School project'});
 });
 
+
 router.get('/students', async (request, response) => {
    try {
        let dbRows = await db.getAllStudents();
